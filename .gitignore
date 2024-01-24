@@ -134,3 +134,4 @@ yarn.lock
 bin/
 private_key.pem
 public_key.pem
+.idea
