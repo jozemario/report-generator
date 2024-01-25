@@ -19,6 +19,6 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
         library: 'myLibrary',
-        libraryTarget: 'amd'
+        libraryTarget: 'umd'
     },
 };

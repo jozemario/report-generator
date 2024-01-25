@@ -1,7 +1,6 @@
 import PptxGenJS from 'pptxgenjs'
 
 export class ReportGenerator {
-
   generateReport(): void {
     const pptx = new PptxGenJS()
 
@@ -14,6 +13,4 @@ export class ReportGenerator {
   }
 }
 
-
-// Export PptxGenJS constructor
-export { PptxGenJS };
+export { PptxGenJS }
