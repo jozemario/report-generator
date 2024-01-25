@@ -14,13 +14,24 @@
 </head>
 <body>
 <h1>Report Generator Integration Test</h1>
-<button id="generateReport">Generate Report</button>
+<button id="generateReport">Generate Custom Report</button>
+<button id="createPptx">Create PowerPoint</button>
+
 
 <script>
     require(['myLibrary'], function(myLibrary) {
+        const { ReportGenerator, PptxGenJS } = myLibrary;
+
         document.getElementById('generateReport').addEventListener('click', function() {
-            // Use the exported reportGenerator instance to generate the report
-            myLibrary.reportGenerator.generateReport();
+            const reportGenerator = new ReportGenerator();
+            reportGenerator.generateReport();
+        });
+
+        document.getElementById('createPptx').addEventListener('click', function() {
+            const pptx = new PptxGenJS();
+            const slide = pptx.addSlide();
+            slide.addText('New Slide!', { x: 1, y: 1, w: 8, h: 2, fontSize: 24 });
+            pptx.writeFile({ fileName: 'NewPresentation.pptx' });
         });
     });
 </script>
